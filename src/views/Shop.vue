@@ -21,7 +21,8 @@ const cart = useCartStore()
 onMounted(async () => {
     try {
         loading.value = true
-        const res = await fetch('/products.json')
+        const base = import.meta.env.BASE_URL
+        const res = await fetch(`${base}products.json`)
         if (!res.ok) throw new Error('Не удалось закгрузить товары')
         products.value = await res.json()
     } catch (e:any) {
