@@ -24,7 +24,12 @@ onMounted(async () => {
         const base = import.meta.env.BASE_URL
         const res = await fetch(`${base}products.json`)
         if (!res.ok) throw new Error('Не удалось закгрузить товары')
-        products.value = await res.json()
+        const data = await res.json()
+
+        products.value = data.map((item: Product) => ({
+            ...item,
+            image: `${base}${item.image}`
+        }))
     } catch (e:any) {
         error.value = e.message
     } finally {
