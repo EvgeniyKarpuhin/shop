@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useCartStore } from '@/stores/cart';
 
@@ -57,9 +57,9 @@ function add(p: Product) {
                 <option value="price-desc">Цена ↓</option>
             </select>
         </div>
-        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fill, mimax(220px, 1fr)); gap: 16px;">
+        <div class="flex" style="display: flex; grid-template-columns: repeat(auto-fill, mimax(220px, 1fr)); gap: 16px; justify-content: space-around; margin-top: 30px;">
             <div v-for="p in filtered" :key="p.id" class="card" style="border: 1px solid #eee; padding: 12px; border-radius: 12px;">
-                <img :src="p.image" alt="p.name" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px;" />
+                <img :src="p.image" alt="p.name" style="width: 500px; height: 500px; object-fit: cover; border-radius: 8px;" />
                 <h3 style="margin: 8px 0 4px;">{{ p.name }}</h3>
                 <p style="opacity: .7; margin: 0 0 8px;">{{ p.description }}</p>
                 <strong>{{ p.price.toFixed(2) }} $</strong>

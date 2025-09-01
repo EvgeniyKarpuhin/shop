@@ -21,5 +21,23 @@ export const useCartStore = defineStore('cart', () => {
         else items.value.push({...product, qty})
     }
 
-    return { items, count, total, add }
+    function remove(id: number) {
+        items.value = items.value.filter(i=> i.id === id)
+    }
+
+    function setQty(id:number, qty: number) {
+        const it = items.value.find(i=> i.id === id)
+        if(!it) return
+        it.qty = Math.max(1, qty)
+    }
+
+    function clear() {
+        items.value = []
+    }
+
+    watch(items, (v) => {
+        localStorage.setItem('cart', JSON.stringify(v))
+    }, { deep: true })
+
+    return { items, count, total, add, remove, setQty, clear }
 })

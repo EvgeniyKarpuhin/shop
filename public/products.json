@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Ноутбук Lenovo",
+        "description": "Мощный как для игр, так и для работы",
+        "price": 1100,
+        "image": "/images/Lenovo.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Смартфон Самсунг",
+        "description": "AMOLED-дисплей, прекрасное качество камеры, мощный процессор",
+        "price": 800,
+        "image": "/images/samsung.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Наушники",
+        "description": "Пркрасный звук, есть активное шумоподавление",
+        "price": 100,
+        "image": "/images/mtb.jpg"
+    }
+]

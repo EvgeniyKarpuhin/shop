@@ -9,8 +9,8 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/shop' },
     { path: '/login', component: Login, meta: { public: true } },
-    { path: '/', component: Shop },
-    { path: '/', component: Cart },
+    { path: '/shop', component: Shop },
+    { path: '/cart', component: Cart },
   ],
 })
 

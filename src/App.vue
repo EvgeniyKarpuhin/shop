@@ -18,7 +18,7 @@ const cart = useCartStore()
         </div>
     </header>
     <main style="padding: 16px;">
-        <routewr-view />
+        <router-view />
     </main>
   </div>
 </template>
