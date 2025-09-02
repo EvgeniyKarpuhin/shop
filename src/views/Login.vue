@@ -21,12 +21,15 @@ function onSubmit() {
 </script>
 
 <template>
-    <div style="max-width: 360px; margin: 40px auto;">
+    <div style="max-width: 360px; margin: 40px auto; text-align: center;">
         <h2>Вход</h2>
-        <form @submit.prevent="onSubmit" style="display: grid; gap: 12px; margin-top: 16px;">
+        <form @submit.prevent="onSubmit" style="display: grid; gap: 16px;">
             <input v-model="email" type="email" placeholder="Email" required></input>
             <input v-model="password" type="password" placeholder="Введите пароль" required></input>
-            <button type="submit">Войти</button>
+            <div>
+                <button type="submit" style="width: 100px; height: 30px; border-radius: 5px; background-color:darkorange; border: none; font-size: 16px; cursor: pointer;">Войти</button>
+            </div>
+            
         </form>
         <p v-if="error" style="color: red;">{{ error }}</p>
     </div>
