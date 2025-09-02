@@ -7,7 +7,7 @@ export const useAuthStore = defineStore('auth', () => {
     const token = ref<string | null>(localStorage.getItem('token'))
     const user = ref<User>(JSON.parse(localStorage.getItem('user') || 'null'))
 
-    const isAuthenticated = computed(() => !token.value)
+    const isAuthenticated = computed(() => !!token.value)
 
     function login(email: string, password: string) {
         token.value = 'John-Doll'

@@ -1,8 +1,15 @@
 <script setup lang="ts">
 import { useAuthStore } from './stores/authorization';
 import { useCartStore } from './stores/cart';
+import { useRouter } from 'vue-router';
 const auth = useAuthStore()
 const cart = useCartStore()
+const router = useRouter()
+
+function onLogout() {
+  auth.logout()
+  router.push('/login')
+}
 </script>
 
 <template>
@@ -13,7 +20,7 @@ const cart = useCartStore()
 
         <div style="margin-left: auto; display: flex; gap: 12px; align-items: center;">
             <span v-if="auth.user">{{ auth.user.email }}</span>
-            <button v-if="auth.isAuthenticated" @click="auth.logout">Выйти</button>
+            <button v-if="auth.isAuthenticated" @click="onLogout">Выйти</button>
             <router-link v-else to="/login">Войти</router-link>
         </div>
     </header>
