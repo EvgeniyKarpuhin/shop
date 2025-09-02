@@ -7,9 +7,9 @@ const cart = useCartStore()
 
 <template>
   <div class="id">
-    <header style="display: flex; gap: 12px; align-items: center; padding: 12px; border-bottom: 1px solid #eee;">
-        <router-link to="/shop">Магазин</router-link> 
-        <router-link to="/cart">Корзина ({{ cart.count }})</router-link>
+    <header style="display: flex; gap: 12px; font-size: 18px; align-items: center; padding: 12px; border-bottom: 1px solid #eee;">
+        <router-link to="/shop" class="link">Магазин</router-link> 
+        <router-link to="/cart" class="link active">Корзина ({{ cart.count }})</router-link>
 
         <div style="margin-left: auto; display: flex; gap: 12px; align-items: center;">
             <span v-if="auth.user">{{ auth.user.email }}</span>
@@ -22,3 +22,14 @@ const cart = useCartStore()
     </main>
   </div>
 </template>
+
+<style scoped>
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.router-link-exact-active {
+  color: green;
+}
+</style>

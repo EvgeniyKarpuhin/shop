@@ -22,7 +22,7 @@ export const useCartStore = defineStore('cart', () => {
     }
 
     function remove(id: number) {
-        items.value = items.value.filter(i=> i.id === id)
+        items.value = items.value.filter(i=> i.id !== id)
     }
 
     function setQty(id:number, qty: number) {
